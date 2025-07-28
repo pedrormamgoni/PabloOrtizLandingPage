@@ -1,0 +1,25 @@
+{
+  "name": "pabloortizlandingpage",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedrormamgoni/PabloOrtizLandingPage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pedrormamgoni/PabloOrtizLandingPage/issues"
+  },
+  "homepage": "https://github.com/pedrormamgoni/PabloOrtizLandingPage#readme",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11"
+  }
+}
