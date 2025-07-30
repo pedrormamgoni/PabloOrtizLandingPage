@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Configurações
   const CONFIG = {
-    whatsappNumber: "5511999999999",
-    email: "pablo@dinabox.net",
+    whatsappNumber: "54996000209",
+    email: "pablocomercialdinabox@gmail.com",
     animationDelay: 100,
   }
 
@@ -181,7 +181,7 @@ window.openWhatsApp = (mensagem = "") => {
   const mensagemPadrao = "Olá Pablo! Tenho uma empresa e gostaria de conhecer o DinaBox. Pode me ajudar?"
   const mensagemFinal = mensagem || mensagemPadrao
   const mensagemCodificada = encodeURIComponent(mensagemFinal)
-  window.open(`https://wa.me/55546000209?text=${mensagemCodificada}`, "_blank")
+  window.open(`https://wa.me/54996000209?text=${mensagemCodificada}`, "_blank")
 }
 
 window.openEmail = () => {
@@ -189,7 +189,7 @@ window.openEmail = () => {
   const corpo = encodeURIComponent(
     "Olá Pablo,\n\nTenho uma empresa e gostaria de conhecer mais sobre o DinaBox.\n\nAguardo seu contato.\n\nObrigado!",
   )
-  window.open(`mailto:pablo@dinabox.net?subject=${assunto}&body=${corpo}`, "_blank")
+  window.open(`mailto:pablocomercialdinabox@gmail.com?subject=${assunto}&body=${corpo}`, "_blank")
 }
 
 window.submitForm = (event) => {
@@ -198,7 +198,7 @@ window.submitForm = (event) => {
   // Aqui você pode adicionar a lógica para enviar o formulário
   // Por exemplo, enviar para um serviço de email ou API
 
-  alert("Formulário enviado com sucesso! Pablo entrará em contato em até 30 minutos.")
+  alert("Formulário enviado com sucesso!")
 
   // Opcional: redirecionar para WhatsApp após envio
   setTimeout(() => {
