@@ -6,7 +6,7 @@
     <title>DinaBox - Soluções em Automação</title>
     <meta
         name="description"
-        content="Transforme sua empresa com o DinaBox. Sistema completo de gestão que já revolucionou mais de 5.000 empresas no Brasil."
+        content="Transforme sua empresa com o DinaBox. Sistema completo de gestão que já revolucionou mais de 1.200 marcenarias no Brasil e no mundo."
     />
 
     <!-- Tailwind CSS -->
@@ -31,193 +31,302 @@
     <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-dinaboxWhite">
+<body class="bg-dinaboxWhite smooth-scroll">
     <!-- Header -->
-    <header
-        class="sticky top-0 z-50 w-full border-b bg-dinaboxWhite/95 backdrop-blur"
-    >
-        <div
-            class="container mx-auto flex h-16 items-center justify-between px-4 md:px-6"
-        >
-            <div class="flex items-center space-x-2">
-                <div
-                    class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-r from-dinaboxPrimary to-dinaboxDark"
-                >
-                    <span class="text-dinaboxWhite font-bold">D</span>
+    <header class="sticky top-0 z-50 w-full border-b bg-dinaboxWhite/95 backdrop-blur">
+        <div class="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
+            <div class="flex items-center space-x-3">
+                <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-r from-dinaboxPrimary to-dinaboxDark">
+                    <span class="text-dinaboxWhite font-bold text-lg">D</span>
                 </div>
                 <span class="text-dinaboxDark font-bold text-xl">DinaBox</span>
             </div>
 
             <nav class="hidden md:flex items-center space-x-8">
-                <a
-                    href="#sistema"
-                    class="text-sm font-medium hover:text-dinaboxPrimary transition-colors"
-                    >Sistema</a
-                >
-                <a
-                    href="#vendedor"
-                    class="text-sm font-medium hover:text-dinaboxPrimary transition-colors"
-                    >Sobre mim</a
-                >
-                <a
-                    href="#contato"
-                    class="text-sm font-medium hover:text-dinaboxPrimary transition-colors"
-                    >Contato</a
-                >
+                <a href="#sistema" class="text-sm font-medium hover:text-dinaboxPrimary transition-colors">Sistema</a>
+                <a href="#vendedor" class="text-sm font-medium hover:text-dinaboxPrimary transition-colors">Sobre mim</a>
+                <a href="#contato" class="text-sm font-medium hover:text-dinaboxPrimary transition-colors">Contato</a>
             </nav>
 
             <div class="flex items-center space-x-4">
-                <button
-                    class="bg-dinaboxPrimary hover:bg-opacity-90 text-dinaboxWhite px-4 py-2 rounded-md font-medium transition-colors"
-                >
-                    <a
-                        href="https://api.whatsapp.com/send/?phone=54996000209&text=Ol%C3%A1+Pablo%21+Tenho+uma+empresa+e+gostaria+de+conhecer+o+DinaBox.+Pode+me+ajudar%3F&type=phone_number&app_absent=0"
-                        target="_blank"
-                        class="hover:text-dinaboxWhite transition-colors"
-                        >Quero o DinaBox</a
-                    >
+                <button onclick="openWhatsApp()" class="btn-primary text-dinaboxWhite px-4 py-2 rounded-md font-medium">
+                    Quero o DinaBox
                 </button>
-
-                <button class="md:hidden p-2">
+                <button class="md:hidden p-2" onclick="toggleMobileMenu()">
                     <i data-lucide="menu" class="h-5 w-5 text-dinaboxDark"></i>
                 </button>
             </div>
         </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <nav class="container mx-auto px-4 py-4 space-y-2">
+                <a href="#sistema" class="block py-2 text-sm font-medium hover:text-dinaboxPrimary transition-colors">Sistema</a>
+                <a href="#vendedor" class="block py-2 text-sm font-medium hover:text-dinaboxPrimary transition-colors">Sobre mim</a>
+                <a href="#contato" class="block py-2 text-sm font-medium hover:text-dinaboxPrimary transition-colors">Contato</a>
+            </nav>
+        </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="py-20 md:py-32 hero-gradient">
+    <section id="hero-dinabox" class="py-20 md:py-32 hero-gradient">
         <div class="container mx-auto px-4 md:px-6">
-            <div
-                class="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center"
-            >
-                <div class="space-y-8 max-w-full">
-                    <div class="space-y-6 max-w-[680px]">
-                        <h1
-                            class="text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5rem] font-bold tracking-tight text-dinaboxDark leading-tight"
-                        >
-                            PRODUÇÃO ÁGIL E COM PRECISÃO MILIMÉTRICA. ISSO É
-                            <span
-                                class="text-dinaboxPrimary font-bold drop-shadow-md hover:text-opacity-80 cursor-pointer transition-colors duration-300"
-                                >DINABOX</span
-                            >
-                        </h1>
-                        <p
-                            class="text-lg sm:text-xl text-gray-600 leading-relaxed"
-                        >
-                            UM SOFTWARE PENSADO PARA TRANSFORMAR A ROTINA DA
-                            MARCENARIA MODERNA, AUTOMATIZANDO TAREFAS, OTIMIZANDO
-                            RECURSOS E INTEGRANDO SEU PROCESSO PRODUTIVO COM O
-                            MUNDO DIGITAL.
-                        </p>
-                        <p
-                            class="text-lg sm:text-xl text-gray-600 leading-relaxed"
-                        >
-                            COM POUCOS CLIQUES, VOCÊ GERA RELATÓRIOS COMPLETOS,
-                            PLANOS DE CORTE OTIMIZADOS, ETIQUETAS COM INFORMAÇÕES
-                            E SE INTEGRA COM MÁQUINAS CNC — OU ATÉ EXECUTA CORTES
-                            MANUAIS COM CONTROLE E ORGANIZAÇÃO PROFISSIONAL.
-                        </p>
-                        <p
-                            class="text-lg sm:text-xl text-gray-600 leading-relaxed"
-                        >
-                            MAIS DE 1.200 MARCENARIAS NO BRASIL E NO MUNDO JÁ
-                            ESTÃO INOVANDO COM A DINABOX, GANHANDO TEMPO,
-                            REDUZINDO DESPERDÍCIOS E PRODUZINDO COM MAIS EFICIÊNCIA
-                            E CONTROLE.
-                        </p>
-                        <p
-                            class="text-lg sm:text-xl text-gray-600 leading-relaxed"
-                        >
-                            NÃO FIQUE PARA TRÁS! ESSA É A NOVA MARCENARIA. ESSA
-                            É A DINABOX. VEM INOVAR COM A DINABOX
-                        </p>
+            <div class="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="space-y-8">
+                    <!-- Badge -->
+                    <div class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-dinaboxPrimary/10 text-dinaboxPrimary border border-dinaboxPrimary/20">
+                        🚀 Mais de 1.200 marcenarias transformadas
                     </div>
 
+                    <div class="space-y-6">
+                        <h1 class="hero-title text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-dinaboxDark leading-tight">
+                            PRODUÇÃO ÁGIL E COM 
+                            <span class="text-dinaboxPrimary relative">
+                                PRECISÃO MILIMÉTRICA
+                                <div class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-dinaboxPrimary to-orange-400 rounded-full"></div>
+                            </span>
+                        </h1>
+                        
+                        <div class="space-y-4 text-lg sm:text-xl text-gray-600 leading-relaxed">
+                            <p>Software completo para transformar sua marcenaria com <strong>automação inteligente</strong>, otimização de recursos e integração digital completa.</p>
+                            <p>Com poucos cliques, você gera <strong>relatórios completos</strong>, planos de corte otimizados, etiquetas com informações e se integra com máquinas CNC.</p>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <button
-                            onclick="openWhatsApp()"
-                            class="flex items-center justify-center text-lg px-8 py-6 bg-dinaboxPrimary hover:bg-dinaboxWhite-700 text-dinaboxWhite rounded-md font-medium transition-colors"
-                        >
-                            <i
-                                data-lucide="message-circle"
-                                class="mr-2 h-5 w-5"
-                            ></i>
+                        <button onclick="openWhatsApp()" class="btn-primary pulse-animation flex items-center justify-center text-lg px-8 py-4 text-dinaboxWhite rounded-lg font-medium">
+                            <i data-lucide="message-circle" class="mr-2 h-5 w-5"></i>
                             Falar com Pablo Ortiz
                         </button>
-                        <button
-                            class="flex items-center justify-center text-lg px-8 py-6 border-2 border-dinaboxPrimary text-dinaboxPrimary hover:bg-dinaboxPrimary hover:text-dinaboxWhite bg-transparent rounded-md font-medium transition-colors"
-                        >
+                        <button class="btn-secondary flex items-center justify-center text-lg px-8 py-4 bg-transparent rounded-lg font-medium">
                             <i data-lucide="play" class="mr-2 h-4 w-4"></i>
                             Ver Demonstração
                         </button>
                     </div>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-6 pt-8">
+                        <div class="stats-card text-center p-4 rounded-xl">
+                            <div class="text-2xl font-bold text-dinaboxDark">1.200+</div>
+                            <div class="text-sm text-gray-600">Marcenarias</div>
+                        </div>
+                        <div class="stats-card text-center p-4 rounded-xl">
+                            <div class="text-2xl font-bold text-dinaboxDark">9 Anos</div>
+                            <div class="text-sm text-gray-600">Experiência</div>
+                        </div>
+                        <div class="stats-card text-center p-4 rounded-xl">
+                            <div class="text-2xl font-bold text-dinaboxDark">500+</div>
+                            <div class="text-sm text-gray-600">Empresas</div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="relative">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-r from-dinaboxPrimary to-dinaboxDark rounded-2xl blur-3xl opacity-20"
-                    ></div>
-                    <img
-                        src="https://via.placeholder.com/800x600/db652a/ffffff?text=DinaBox+Dashboard"
-                        alt="DinaBox Dashboard"
-                        class="relative rounded-2xl shadow-2xl border border-gray-200 w-full"
-                    />
+                    <div class="absolute inset-0 bg-gradient-to-r from-dinaboxPrimary to-dinaboxDark rounded-3xl blur-3xl opacity-20"></div>
+                    <img src="https://via.placeholder.com/800x600/db652a/ffffff?text=DinaBox+Dashboard" alt="DinaBox Dashboard" class="relative rounded-2xl shadow-2xl border border-gray-200 w-full" />
+                </div>
+            </div>
+        </div>
+    </section>
+   <!-- Seção Detalhada DinaBox -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-6xl mx-auto">
+                <!-- Header da Seção -->
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-dinaboxPrimary/10 text-dinaboxPrimary border border-dinaboxPrimary/20 mb-6">
+                        🔧 A Revolução da Marcenaria Digital
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-dinaboxDark mb-6">
+                        ESSA É A <span class="text-dinaboxPrimary">DINABOX</span>
+                    </h2>
+                </div>
+
+                <!-- Card Principal -->
+                <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden mb-12">
+                    <div class="p-8 md:p-12">
+                        <div class="grid lg:grid-cols-2 gap-12 items-center">
+                            <!-- Conteúdo Textual -->
+                            <div class="space-y-8">
+                                <div class="space-y-6 text-lg leading-relaxed text-gray-700">
+                                    <p class="text-xl font-semibold text-dinaboxDark">
+                                        <span class="text-dinaboxPrimary font-bold">UM SOFTWARE PENSADO</span> PARA TRANSFORMAR A ROTINA DA MARCENARIA MODERNA
+                                    </p>
+                                    
+                                    <p>
+                                        <strong>Automatizando tarefas</strong>, <strong>otimizando recursos</strong> e <strong>integrando seu processo produtivo</strong> com o mundo digital.
+                                    </p>
+                                    
+                                    <p>
+                                        Com poucos cliques, você gera <span class="bg-yellow-100 px-2 py-1 rounded font-semibold">relatórios completos</span>, <span class="bg-green-100 px-2 py-1 rounded font-semibold">planos de corte otimizados</span>, <span class="bg-blue-100 px-2 py-1 rounded font-semibold">etiquetas com informações</span> e se integra com <span class="bg-purple-100 px-2 py-1 rounded font-semibold">máquinas CNC</span> — ou até executa cortes manuais com controle e organização profissional.
+                                    </p>
+                                </div>
+
+                                <!-- Estatística Destacada -->
+                                <div class="bg-gradient-to-r from-dinaboxPrimary to-orange-500 rounded-2xl p-6 text-white">
+                                    <div class="flex items-center space-x-4">
+                                        <div class="flex h-16 w-16 items-center justify-center rounded-full bg-white/20">
+                                            <i data-lucide="trending-up" class="h-8 w-8"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-3xl font-bold">1.200+</div>
+                                            <div class="text-orange-100">Marcenarias no Brasil e no mundo</div>
+                                        </div>
+                                    </div>
+                                    <p class="mt-4 text-orange-100">
+                                        Já estão <strong>inovando com a DinaBox</strong>, ganhando tempo, reduzindo desperdícios e produzindo com mais eficiência e controle.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Imagem/Gráfico -->
+                            <div class="relative">
+                                <div class="absolute inset-0 bg-gradient-to-r from-dinaboxPrimary/20 to-blue-500/20 rounded-2xl blur-2xl"></div>
+                                <img src="https://via.placeholder.com/600x400/db652a/ffffff?text=DinaBox+Interface" 
+                                    alt="Interface DinaBox" 
+                                    class="relative rounded-2xl shadow-xl w-full" />
+                                
+                                <!-- Badge de Destaque -->
+                                <div class="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                                    ✓ Comprovado
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grid de Benefícios -->
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 mb-4">
+                            <i data-lucide="clock" class="h-6 w-6 text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-dinaboxDark mb-2">Ganhando Tempo</h3>
+                        <p class="text-gray-600">Automatização completa dos processos manuais repetitivos</p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-100 mb-4">
+                            <i data-lucide="scissors" class="h-6 w-6 text-red-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-dinaboxDark mb-2">Reduzindo Desperdícios</h3>
+                        <p class="text-gray-600">Otimização inteligente de cortes e aproveitamento de materiais</p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 mb-4">
+                            <i data-lucide="bar-chart-3" class="h-6 w-6 text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-dinaboxDark mb-2">Mais Eficiência</h3>
+                        <p class="text-gray-600">Controle total da produção com relatórios em tempo real</p>
+                    </div>
+                </div>
+
+                <!-- Call to Action Final -->
+                <div class="bg-gradient-to-r from-dinaboxDark to-gray-800 rounded-3xl p-8 md:p-12 text-center text-white">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">
+                        NÃO FIQUE PARA TRÁS!
+                    </h3>
+                    <p class="text-xl mb-2 text-gray-200">
+                        ESSA É A NOVA MARCENARIA.
+                    </p>
+                    <p class="text-2xl font-bold text-dinaboxPrimary mb-8">
+                        ESSA É A DINABOX.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <button onclick="openWhatsApp()" class="btn-primary pulse-animation flex items-center justify-center text-lg px-8 py-4 text-white rounded-xl font-semibold">
+                            <i data-lucide="rocket" class="mr-2 h-6 w-6"></i>
+                            VEM INOVAR COM A DINABOX
+                        </button>
+                        <div class="text-sm text-gray-300">
+                            💬 Fale com Pablo Ortiz agora mesmo
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Nova seção de apresentação da Dinabox estilizada -->
-    <section class="py-16 bg-gray-50">
-      <div class="container mx-auto px-4 md:px-6 max-w-4xl">
-        <div class="bg-dinaboxWhite rounded-xl p-10 shadow-lg border border-gray-200">
-          <p class="text-dinaboxDark text-lg sm:text-xl leading-relaxed space-y-6">
-            <span class="block font-bold text-2xl mb-4 text-dinaboxPrimary">
-              PRODUÇÃO ÁGIL E COM PRECISÃO MILIMÉTRICA. ISSO É DINABOX!
-            </span>
-            <span class="block">
-              Um software pensado para transformar a rotina da marcenaria moderna, automatizando tarefas, otimizando recursos e integrando seu processo produtivo com o mundo digital.
-            </span>
-            <span class="block">
-              Com poucos cliques, você gera relatórios completos, planos de corte otimizados, etiquetas com informações e se integra com máquinas CNC — ou até executa cortes manuais com controle e organização profissional.
-            </span>
-            <span class="block">
-              Mais de 1.200 marcenarias no Brasil e no mundo já estão inovando com a Dinabox, ganhando tempo, reduzindo desperdícios e produzindo com mais eficiência e controle.
-            </span>
-            <span class="block font-semibold mt-6 text-dinaboxPrimary text-lg">
-              Não fique para trás! Essa é a nova marcenaria. Essa é a Dinabox. Vem inovar com a Dinabox.
-            </span>
-          </p>
+    <!-- Features Section -->
+    <section id="sistema" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center space-y-4 mb-16">
+                <div class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-dinaboxPrimary/10 text-dinaboxPrimary border border-dinaboxPrimary/20">
+                    Por que escolher DinaBox?
+                </div>
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-dinaboxDark">
+                    Transforme sua marcenaria com tecnologia
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Um software pensado para automatizar tarefas, otimizar recursos e integrar seu processo produtivo com o mundo digital.
+                </p>
+            </div>
+
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <div class="feature-card card-hover p-6 rounded-xl">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 mb-4">
+                        <i data-lucide="check-circle" class="h-6 w-6 text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dinaboxDark mb-2">Planos de Corte Otimizados</h3>
+                    <p class="text-gray-600">Reduza desperdícios com algoritmos inteligentes de otimização</p>
+                </div>
+
+                <div class="feature-card card-hover p-6 rounded-xl">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-yellow-100 mb-4">
+                        <i data-lucide="star" class="h-6 w-6 text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dinaboxDark mb-2">Integração CNC</h3>
+                    <p class="text-gray-600">Conecte-se diretamente com máquinas CNC para automação total</p>
+                </div>
+
+                <div class="feature-card card-hover p-6 rounded-xl">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 mb-4">
+                        <i data-lucide="trending-up" class="h-6 w-6 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dinaboxDark mb-2">Relatórios Completos</h3>
+                    <p class="text-gray-600">Acompanhe sua produção com relatórios detalhados e precisos</p>
+                </div>
+
+                <div class="feature-card card-hover p-6 rounded-xl">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-100 mb-4">
+                        <i data-lucide="users" class="h-6 w-6 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dinaboxDark mb-2">Gestão de Equipe</h3>
+                    <p class="text-gray-600">Organize tarefas e acompanhe o desempenho da sua equipe</p>
+                </div>
+
+                <div class="feature-card card-hover p-6 rounded-xl">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 mb-4">
+                        <i data-lucide="message-circle" class="h-6 w-6 text-dinaboxPrimary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dinaboxDark mb-2">Suporte Especializado</h3>
+                    <p class="text-gray-600">Conte com Pablo Ortiz e nossa equipe de especialistas</p>
+                </div>
+
+                <div class="feature-card card-hover p-6 rounded-xl">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100 mb-4">
+                        <i data-lucide="zap" class="h-6 w-6 text-gray-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dinaboxDark mb-2">Fácil Implementação</h3>
+                    <p class="text-gray-600">Sistema intuitivo que você aprende rapidamente</p>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- Sobre Pablo Ortiz -->
-    <section id="vendedor" class="py-20 md:py-32 bg-gray-50">
+    <!-- About Pablo Section -->
+    <section id="vendedor" class="py-20 md:py-32">
         <div class="container mx-auto px-4 md:px-6">
             <div class="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
                 <div class="relative">
-                    <img
-                        src="https://via.placeholder.com/400x500/0F172A/ffffff?text=Pablo+Ortiz"
-                        alt="Pablo Ortiz - Especialista DinaBox"
-                        class="rounded-2xl shadow-xl w-full"
-                    />
-                    <div
-                        class="absolute -bottom-6 -right-6 bg-dinaboxWhite p-4 rounded-xl shadow-lg border"
-                    >
+                    <img src="https://via.placeholder.com/400x500/0F172A/ffffff?text=Pablo+Ortiz" alt="Pablo Ortiz - Especialista DinaBox" class="rounded-2xl shadow-xl w-full" />
+                    <div class="absolute -bottom-6 -right-6 bg-dinaboxWhite p-4 rounded-xl shadow-lg border">
                         <div class="flex items-center space-x-2">
-                            <i
-                                data-lucide="award"
-                                class="h-6 w-6 text-yellow-500"
-                            ></i>
+                            <i data-lucide="award" class="h-6 w-6 text-yellow-500"></i>
                             <div>
-                                <div class="font-semibold text-sm">
-                                    Top Vendedor
-                                </div>
-                                <div class="text-xs text-gray-600">
-                                    2023/2024
-                                </div>
+                                <div class="font-semibold text-sm">Top Vendedor</div>
+                                <div class="text-xs text-gray-600">2023/2024</div>
                             </div>
                         </div>
                     </div>
@@ -225,75 +334,46 @@
 
                 <div class="space-y-6">
                     <div class="space-y-4">
-                        <span
-                            class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium border border-gray-300"
-                            >Seu Consultor Especialista</span
-                        >
-                        <h2
-                            class="text-3xl font-bold tracking-tight sm:text-4xl text-dinaboxDark"
-                        >
-                            Pablo Ortiz
-                        </h2>
-                        <p class="text-lg text-dinaboxPrimary font-semibold">
-                            Especialista em Transformação Digital Empresarial
-                        </p>
+                        <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium border border-gray-300">
+                            Seu Consultor Especialista
+                        </div>
+                        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-dinaboxDark">Pablo Ortiz</h2>
+                        <p class="text-lg text-dinaboxPrimary font-semibold">Especialista em Transformação Digital Empresarial</p>
                     </div>
 
                     <div class="space-y-4 text-gray-600">
                         <p class="text-lg leading-relaxed">
-                            Atuando a mais de 9 anos no comercio geral e com anos
-                            de experiencia no setor moveleiro, minha missão é
-                            ajudar marcenarias e fabricas de moveis a transformar
-                            a rotina de trabalho em processos automatizados, de
-                            fácil e rápida execução. Da ideia ao corte otimizado e
-                            inteligente, Dinabox transforma a sua produção.
+                            Com mais de <strong>9 anos no comércio geral</strong> e vasta experiência no setor moveleiro, minha missão é ajudar marcenarias e fábricas de móveis a transformar sua rotina de trabalho em processos automatizados, de fácil e rápida execução.
+                        </p>
+                        <p class="text-lg leading-relaxed">
+                            <strong>Da ideia ao corte otimizado e inteligente</strong>, DinaBox transforma a sua produção com precisão milimétrica e eficiência máxima.
                         </p>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid grid-cols-2 gap-6">
                         <div class="flex items-center space-x-3">
-                            <div
-                                class="flex h-10 w-10 items-center justify-center rounded-full bg-orange-100"
-                            >
-                                <i
-                                    data-lucide="users"
-                                    class="h-5 w-5 text-dinaboxPrimary"
-                                ></i>
+                            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-orange-100">
+                                <i data-lucide="users" class="h-6 w-6 text-dinaboxPrimary"></i>
                             </div>
                             <div>
-                                <div class="font-semibold">500+</div>
-                                <div class="text-sm text-gray-600">
-                                    Empresas Atendidas
-                                </div>
+                                <div class="font-semibold text-lg">500+</div>
+                                <div class="text-sm text-gray-600">Empresas Atendidas</div>
                             </div>
                         </div>
                         <div class="flex items-center space-x-3">
-                            <div
-                                class="flex h-10 w-10 items-center justify-center rounded-full bg-green-100"
-                            >
-                                <i
-                                    data-lucide="trending-up"
-                                    class="h-5 w-5 text-green-600"
-                                ></i>
+                            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
+                                <i data-lucide="trending-up" class="h-6 w-6 text-green-600"></i>
                             </div>
                             <div>
-                                <div class="font-semibold">5 Anos</div>
-                                <div class="text-sm text-gray-600">
-                                    de Experiência
-                                </div>
+                                <div class="font-semibold text-lg">9 Anos</div>
+                                <div class="text-sm text-gray-600">de Experiência</div>
                             </div>
                         </div>
                     </div>
 
                     <div class="pt-4">
-                        <button
-                            onclick="openWhatsApp()"
-                            class="flex items-center px-6 py-3 bg-dinaboxPrimary hover:bg-opacity-90 text-dinaboxWhite rounded-md font-medium transition-colors"
-                        >
-                            <i
-                                data-lucide="message-circle"
-                                class="mr-2 h-5 w-5"
-                            ></i>
+                        <button onclick="openWhatsApp()" class="btn-primary flex items-center px-6 py-3 text-dinaboxWhite rounded-lg font-medium">
+                            <i data-lucide="message-circle" class="mr-2 h-5 w-5"></i>
                             Falar com Pablo Agora
                         </button>
                     </div>
@@ -302,161 +382,183 @@
         </div>
     </section>
 
-    <!-- Formulário de Contato -->
+    <!-- Contact Section -->
     <section id="contato" class="py-20 md:py-32 bg-gray-50">
         <div class="container mx-auto px-4 md:px-6">
             <div class="max-w-4xl mx-auto">
                 <div class="text-center space-y-4 mb-12">
-                    <span
-                        class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium border border-gray-300 mx-auto"
-                    >
+                    <div class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-dinaboxPrimary/10 text-dinaboxPrimary border border-dinaboxPrimary/20">
                         Entre em Contato
-                    </span>
-                    <h2
-                        class="text-3xl font-bold tracking-tight sm:text-4xl text-dinaboxDark"
-                    >
+                    </div>
+                    <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-dinaboxDark">
                         Fale com Pablo Ortiz agora mesmo
                     </h2>
                     <p class="text-xl text-gray-600">
-                        Receba uma consultoria gratuita e descubra como o DinaBox
-                        pode transformar sua empresa.
+                        Receba uma consultoria gratuita e descubra como o DinaBox pode transformar sua empresa.
                     </p>
                 </div>
 
                 <div class="grid gap-8 lg:grid-cols-2">
-                    <!-- Formulário -->
-                    <div class="bg-dinaboxWhite border-0 shadow-xl rounded-lg p-6">
+                    <!-- Form -->
+                    <div class="bg-dinaboxWhite shadow-xl rounded-xl p-8">
                         <div class="space-y-4 mb-6">
-                            <h3
-                                class="text-2xl font-semibold text-dinaboxDark"
-                            >
-                                Solicite uma Demonstração
-                            </h3>
-                            <p class="text-gray-600">
-                                Preencha o formulário e Pablo entrará em contato.
-                            </p>
+                            <h3 class="text-2xl font-semibold text-dinaboxDark">Solicite uma Demonstração</h3>
+                            <p class="text-gray-600">Preencha o formulário e Pablo entrará em contato.</p>
                         </div>
-                        <form class="space-y-4" onsubmit="submitForm(event)">
+                        
+                        <form class="space-y-6" onsubmit="submitForm(event)">
                             <div class="grid gap-4 sm:grid-cols-2">
                                 <div class="space-y-2">
-                                    <label
-                                        class="text-sm font-medium text-dinaboxDark"
-                                        >Nome Completo</label
-                                    >
-                                    <input
-                                        type="text"
-                                        placeholder="Seu nome completo"
-                                        required
-                                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dinaboxPrimary focus:border-dinaboxPrimary"
-                                    />
+                                    <label class="text-sm font-medium text-dinaboxDark">Nome Completo</label>
+                                    <input type="text" placeholder="Seu nome completo" required class="w-full px-4 py-3 border border-gray-300 rounded-lg transition-colors" />
                                 </div>
                                 <div class="space-y-2">
-                                    <label
-                                        class="text-sm font-medium text-dinaboxDark"
-                                        >WhatsApp</label
-                                    >
-                                    <input
-                                        type="tel"
-                                        placeholder="(11) 99999-9999"
-                                        required
-                                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dinaboxPrimary focus:border-dinaboxPrimary"
-                                    />
+                                    <label class="text-sm font-medium text-dinaboxDark">WhatsApp</label>
+                                    <input type="tel" placeholder="(11) 99999-9999" required class="w-full px-4 py-3 border border-gray-300 rounded-lg transition-colors" />
                                 </div>
                             </div>
                             <div class="space-y-2">
-                                <label
-                                    class="text-sm font-medium text-dinaboxDark"
-                                    >Email</label
-                                >
-                                <input
-                                    type="email"
-                                    placeholder="seu@email.com"
-                                    required
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dinaboxPrimary focus:border-dinaboxPrimary"
-                                />
+                                <label class="text-sm font-medium text-dinaboxDark">Email</label>
+                                <input type="email" placeholder="seu@email.com" required class="w-full px-4 py-3 border border-gray-300 rounded-lg transition-colors" />
                             </div>
                             <div class="space-y-2">
-                                <label
-                                    class="text-sm font-medium text-dinaboxDark"
-                                    >Nome da Empresa</label
-                                >
-                                <input
-                                    type="text"
-                                    placeholder="Nome da sua empresa"
-                                    required
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dinaboxPrimary focus:border-dinaboxPrimary"
-                                />
+                                <label class="text-sm font-medium text-dinaboxDark">Nome da Empresa</label>
+                                <input type="text" placeholder="Nome da sua empresa" required class="w-full px-4 py-3 border border-gray-300 rounded-lg transition-colors" />
                             </div>
                             <div class="space-y-2">
-                                <label
-                                    class="text-sm font-medium text-dinaboxDark"
-                                    >Mensagem</label
-                                >
-                                <textarea
-                                    placeholder="Conte-nos sobre sua empresa e seus principais desafios..."
-                                    rows="4"
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dinaboxPrimary focus:border-dinaboxPrimary min-h-[100px]"
-                                ></textarea>
+                                <label class="text-sm font-medium text-dinaboxDark">Mensagem</label>
+                                <textarea placeholder="Conte-nos sobre sua empresa e seus principais desafios..." rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg transition-colors min-h-[100px]"></textarea>
                             </div>
-                            <button
-                                type="submit"
-                                class="w-full flex items-center justify-center bg-dinaboxPrimary hover:bg-dinaboxPrimary text-dinaboxWhite text-lg py-6 rounded-md font-medium transition-colors"
-                            >
-                                <i
-                                    data-lucide="message-circle"
-                                    class="mr-2 h-5 w-5"
-                                ></i>
+                            <button type="submit" class="btn-primary w-full flex items-center justify-center text-dinaboxWhite text-lg py-4 rounded-lg font-medium">
+                                <i data-lucide="message-circle" class="mr-2 h-5 w-5"></i>
                                 Solicitar Demonstração Gratuita
                             </button>
                         </form>
                     </div>
 
-                   <!-- Contatos Diretos -->
-<div class="space-y-6">
-    <!-- WhatsApp -->
-    <div
-        id="card-whatsapp"
-        class="bg-dinaboxPrimary text-dinaboxWhite rounded-lg p-6 shadow-lg"
-    >
-        <div class="flex items-center space-x-4 mb-4">
-            <div
-                class="flex h-12 w-12 items-center justify-center rounded-full bg-dinaboxWhite/20"
-            >
-                <i data-lucide="message-circle" class="h-6 w-6"></i>
-            </div>
-            <div>
-                <h3 class="font-semibold text-lg">WhatsApp Direto</h3>
-                <p class="text-green-100">Resposta imediata</p>
-            </div>
-        </div>
-        <a
-            href="https://api.whatsapp.com/send/?phone=54996000209&text=Ol%C3%A1+Pablo%21+Gostaria+de+mais+informações+sobre+o+DinaBox.&type=phone_number&app_absent=0"
-            target="_blank"
-            class="inline-block rounded bg-white/30 px-5 py-3 text-center font-semibold text-dinaboxWhite hover:bg-white/50 transition-colors"
-            >+55 (54) 9 9600-0209</a
-        >
-    </div>
+                    <!-- Direct Contact -->
+                    <div class="space-y-6">
+                        <!-- WhatsApp -->
+                        <div class="contact-card-whatsapp text-dinaboxWhite rounded-xl p-6">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-dinaboxWhite/20">
+                                    <i data-lucide="message-circle" class="h-6 w-6"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-lg">WhatsApp Direto</h3>
+                                    <p class="text-orange-100">Resposta imediata</p>
+                                </div>
+                            </div>
+                            <button onclick="openWhatsApp()" class="w-full rounded-lg bg-white/20 hover:bg-white/30 px-5 py-3 text-center font-semibold text-dinaboxWhite transition-colors">
+                                +55 (54) 9 9600-0209
+                            </button>
+                        </div>
 
-    <!-- Email -->
-    <div
-        id="card-email"
-        class="bg-dinaboxDark text-dinaboxWhite rounded-lg p-6 shadow-lg"
-    >
-        <div class="flex items-center space-x-4 mb-4">
-            <div
-                class="flex h-12 w-12 items-center justify-center rounded-full bg-white/20"
-            >
-                <i data-lucide="mail" class="h-6 w-6"></i>
-            </div>
-            <div>
-                <h3 class="font-semibold text-lg">Email</h3>
-                <p class="text-white/70">Resposta em até 24 horas</p>
+                        <!-- Email -->
+                        <div class="contact-card-email text-dinaboxWhite rounded-xl p-6">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-white/20">
+                                    <i data-lucide="mail" class="h-6 w-6"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-lg">Email</h3>
+                                    <p class="text-white/70">Resposta em até 24 horas</p>
+                                </div>
+                            </div>
+                            <button onclick="openEmail()" class="w-full rounded-lg bg-white/20 hover:bg-white/30 px-5 py-3 text-center font-semibold text-dinaboxWhite transition-colors">
+                                contato@dinabox.com.br
+                            </button>
+                        </div>
+
+                        <!-- Testimonial -->
+                        <div class="bg-white rounded-xl p-6 border border-gray-200">
+                            <div class="flex items-center space-x-1 mb-3">
+                                <i data-lucide="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                                <i data-lucide="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                                <i data-lucide="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                                <i data-lucide="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                                <i data-lucide="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-3">
+                                "O DinaBox revolucionou nossa marcenaria. Reduzimos 40% do desperdício e aumentamos nossa produtividade significativamente."
+                            </p>
+                            <div class="text-sm">
+                                <div class="font-semibold text-dinaboxDark">João Silva</div>
+                                <div class="text-gray-500">Marcenaria Silva & Filhos</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <a
-            href="mailto:contato@dinabox.com.br"
-            class="inline-block rounded bg-white/30 px-5 py-3 text-center font-semibold text-dinaboxWhite hover:bg-white/50 transition-colors"
-            >contato@dinabox.com.br</a
-        >
-    </div>
-</div>
+    </section>
+
+    <!-- Footer -->
+        <!-- Footer -->
+    <footer class="py-12 bg-dinaboxDark text-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <!-- Logo e descrição -->
+            <div class="space-y-4">
+                <div class="flex items-center space-x-2">
+                <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-dinaboxPrimary">
+                    <span class="text-white font-bold">D</span>
+                </div>
+                <span class="text-xl font-bold">DinaBox</span>
+                </div>
+                <p class="text-gray-400">
+                O sistema completo de gestão empresarial que transforma negócios em todo o Brasil.
+                </p>
+            </div>
+
+            <!-- Sistema -->
+            <div class="space-y-4">
+                <h4 class="text-lg font-semibold">Sistema</h4>
+                <ul class="space-y-2 text-gray-400">
+                <li><a href="https://www.dinabox.net/automa%C3%A7%C3%A3o-para-marcenarias" target="_blank" class="hover:text-white transition-colors">Funcionalidades</a></li>
+                <li><a href="https://api.whatsapp.com/send/?phone=54996000209&text=Ol%C3%A1+Pablo%21+Tenho+uma+empresa+e+gostaria+de+conhecer+o+DinaBox.+Pode+me+ajudar%3F&type=phone_number&app_absent=0" target="_blank" class="hover:text-white transition-colors">Demonstração</a></li>
+                <li><a href="https://www.dinabox.net/planos" target="_blank" class="hover:text-white transition-colors">Preços</a></li>
+                <li><a href="#" class="hover:text-white transition-colors">Integrações</a></li>
+                </ul>
+            </div>
+
+            <!-- Empresa -->
+            <div class="space-y-4">
+                <h4 class="text-lg font-semibold">Empresa</h4>
+                <ul class="space-y-2 text-gray-400">
+                <li><a href="https://www.dinabox.net/sobre-a-Dinabox" target="_blank" class="hover:text-white transition-colors">Sobre a DinaBox</a></li>
+                <li><a href="https://www.dinabox.net/case" target="_blank" class="hover:text-white transition-colors">Cases de Sucesso</a></li>
+                <li><a href="https://www.dinabox.net/" target="_blank" class="hover:text-white transition-colors">Site DinaBox</a></li>
+                </ul>
+            </div>
+
+            <!-- Contato -->
+            <div class="space-y-4">
+                <h4 class="text-lg font-semibold">Contato</h4>
+                <ul class="space-y-2 text-gray-400">
+                <li class="flex items-center space-x-2">
+                    <i data-lucide="message-circle" class="h-4 w-4"></i>
+                    <a href="https://api.whatsapp.com/send/?phone=54996000209&text=Ol%C3%A1+Pablo%21+Tenho+uma+empresa+e+gostaria+de+conhecer+o+DinaBox.+Pode+me+ajudar%3F&type=phone_number&app_absent=0" target="_blank" class="hover:text-white transition-colors">(54) 9600-0209</a>
+                </li>
+                <li class="flex items-center space-x-2">
+                    <i data-lucide="mail" class="h-4 w-4"></i>
+                    <span>pablocomercialdinabox@gmail.com</span>
+                </li>
+                <li><a href="https://www.dinabox.app/dinabox/contato" target="_blank" class="hover:text-white transition-colors">Suporte DinaBox</a></li>
+                <li><a href="https://dinabox.tawk.help/" target="_blank" class="hover:text-white transition-colors">Central de Ajuda DinaBox</a></li>
+                </ul>
+            </div>
+            </div>
+
+            <!-- Rodapé final -->
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+            <p>&copy; 2025 DinaBox. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

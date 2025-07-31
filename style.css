@@ -1,283 +1,321 @@
-/* Estilos Customizados para DinaBox - Cores Padrão */
+/* ===================================
+   DINABOX - CUSTOM STYLES
+   Variáveis de cores e estilos customizados
+   =================================== */
 
-/* Gradientes personalizados com cores padrão */
+/* CSS Variables para cores DinaBox */
+:root {
+  --dinabox-dark: #0f172a;
+  --dinabox-primary: #db652a;
+  --dinabox-white: #ffffff;
+  --dinabox-gray: #64748b;
+  --dinabox-light-gray: #f8fafc;
+  --dinabox-border: #e2e8f0;
+}
+
+/* ===================================
+   GRADIENTES PERSONALIZADOS
+   =================================== */
 .gradient-bg {
-    background: linear-gradient(135deg, #db652a 0%, #0F172A 100%);
+  background: linear-gradient(135deg, var(--dinabox-primary) 0%, var(--dinabox-dark) 100%);
 }
 
 .hero-gradient {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #db652a 100%);
+  background: linear-gradient(135deg, var(--dinabox-white) 0%, #f8fafc 50%, #fef3f0 100%);
 }
 
-/* Animações para cards */
+/* ===================================
+   ANIMAÇÕES E TRANSIÇÕES
+   =================================== */
 .card-hover {
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .card-hover:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
 }
 
-/* Estilos específicos para DinaBox */
-#logo-dinabox {
-    cursor: pointer;
+.smooth-scroll {
+  scroll-behavior: smooth;
 }
 
-#header-principal {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-/* Hero Section */
+/* ===================================
+   HERO SECTION
+   =================================== */
 #hero-dinabox {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 #hero-dinabox::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23db652a" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23db652a" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23db652a" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="%23db652a" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="%23db652a" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23db652a" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23db652a" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23db652a" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  pointer-events: none;
 }
 
-/* Botões personalizados */
-#btn-falar-pablo,
-#btn-falar-pablo-final {
-    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
-    box-shadow: 0 4px 15px rgba(22, 163, 74, 0.3);
+/* ===================================
+   BOTÕES CUSTOMIZADOS
+   =================================== */
+.btn-primary {
+  background: linear-gradient(135deg, var(--dinabox-primary) 0%, #c55a24 100%);
+  box-shadow: 0 4px 15px rgba(219, 101, 42, 0.3);
+  transition: all 0.3s ease;
 }
 
-#btn-falar-pablo:hover,
-#btn-falar-pablo-final:hover {
-    box-shadow: 0 6px 20px rgba(22, 163, 74, 0.4);
-    transform: translateY(-1px);
+.btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(219, 101, 42, 0.4);
+  transform: translateY(-1px);
 }
 
-#btn-ver-demo {
-    border: 2px solid #db652a;
-    color: #db652a;
+.btn-secondary {
+  border: 2px solid var(--dinabox-primary);
+  color: var(--dinabox-primary);
+  transition: all 0.3s ease;
 }
 
-#btn-ver-demo:hover {
-    background-color: rgba(219, 101, 42, 0.1);
+.btn-secondary:hover {
+  background-color: var(--dinabox-primary);
+  color: var(--dinabox-white);
 }
 
-/* Cards do sistema */
-#funcionalidades-grid .card-hover {
-    border: 1px solid #f3f4f6;
-    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+/* ===================================
+   CARDS E COMPONENTES
+   =================================== */
+.feature-card {
+  background: linear-gradient(135deg, var(--dinabox-white) 0%, #fafafa 100%);
+  border: 1px solid var(--dinabox-border);
+  transition: all 0.3s ease;
 }
 
-#card-projetos .bg-primary-100 {
-    background: linear-gradient(135deg, rgba(219, 101, 42, 0.1) 0%, rgba(219, 101, 42, 0.05) 100%);
+.feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-#card-estoque .bg-green-100 {
-    background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+.stats-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(219, 101, 42, 0.2);
 }
 
-#card-orcamentos .bg-primary-100 {
-    background: linear-gradient(135deg, rgba(219, 101, 42, 0.1) 0%, rgba(219, 101, 42, 0.05) 100%);
+/* ===================================
+   CARDS DE CONTATO
+   =================================== */
+.contact-card-whatsapp {
+  background: linear-gradient(135deg, var(--dinabox-primary) 0%, #c55a24 100%);
+  box-shadow: 0 10px 25px rgba(219, 101, 42, 0.3);
 }
 
-#card-financeiro .bg-dark-100 {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.1) 0%, rgba(15, 23, 42, 0.05) 100%);
+.contact-card-email {
+  background: linear-gradient(135deg, var(--dinabox-dark) 0%, #1e293b 100%);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.3);
 }
 
-#card-clientes .bg-primary-100 {
-    background: linear-gradient(135deg, rgba(219, 101, 42, 0.1) 0%, rgba(219, 101, 42, 0.05) 100%);
-}
-
-#card-relatorios .bg-dark-100 {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.1) 0%, rgba(15, 23, 42, 0.05) 100%);
-}
-
-/* Cases de sucesso */
-#cases-grid .bg-white {
-    background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
-    border-left: 4px solid #db652a;
-}
-
-/* Formulário de contato */
-#formulario-contato {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-}
-
-#form-demonstracao input:focus,
-#form-demonstracao textarea:focus {
-    border-color: #db652a;
-    ring-color: #db652a;
-    box-shadow: 0 0 0 3px rgba(219, 101, 42, 0.1);
-}
-
-/* Cards de contato direto */
-#card-whatsapp {
-    background: #db652a;
-    box-shadow: 0 10px 25px rgba(22, 163, 74, 0.3);
-}
-
-#card-email {
-    background: #db652a;
-    box-shadow: 0 10px 25px rgba(219, 101, 42, 0.3);
-}
-
-/* CTA Final */
-#cta-final {
-    background: linear-gradient(135deg, #db652a 0%, #0F172A 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-#cta-final::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="pattern" width="20" height="20" patternUnits="userSpaceOnUse"><rect width="20" height="20" fill="%23ffffff" opacity="0.05"/><path d="M0 10h20M0 15h20" stroke="%23ffffff" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23pattern)"/></svg>');
-    pointer-events: none;
-}
-
-/* Footer */
-#footer-principal {
-    background: linear-gradient(135deg, #0F172A 0%, #1f2937 100%);
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    #navegacao-principal {
-        display: none;
-    }
-    
-    #titulo-principal {
-        font-size: 2.5rem;
-        line-height: 1.1;
-    }
-    
-    #estatisticas-hero {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    #funcionalidades-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    #cases-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Animações de entrada */
+/* ===================================
+   ANIMAÇÕES KEYFRAMES
+   =================================== */
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in-up {
-    animation: fadeInUp 0.6s ease-out;
+  animation: fadeInUp 0.6s ease-out;
 }
 
-/* Efeitos especiais para ícones */
-[data-lucide] {
-    transition: all 0.3s ease;
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(219, 101, 42, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(219, 101, 42, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(219, 101, 42, 0);
+  }
 }
 
-.card-hover:hover [data-lucide] {
-    transform: scale(1.1);
-}
-
-/* Estilos para estrelas de avaliação */
-.fill-yellow-400 {
-    fill: #facc15;
-    color: #facc15;
-}
-
-/* Smooth scroll */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Loading states */
-.loading {
-    opacity: 0.7;
-    pointer-events: none;
-}
-
-.loading::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 20px;
-    height: 20px;
-    margin: -10px 0 0 -10px;
-    border: 2px solid #db652a;
-    border-radius: 50%;
-    border-top-color: transparent;
-    animation: spin 1s linear infinite;
+.pulse-animation {
+  animation: pulse 2s infinite;
 }
 
 @keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-/* Estilos para badges */
+/* ===================================
+   FORMULÁRIOS
+   =================================== */
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--dinabox-primary);
+  box-shadow: 0 0 0 3px rgba(219, 101, 42, 0.1);
+}
+
+/* ===================================
+   ESTADOS DE LOADING
+   =================================== */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid var(--dinabox-primary);
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+/* ===================================
+   BADGES E ELEMENTOS ESPECIAIS
+   =================================== */
 .badge-success {
-    background-color: #dcfce7;
-    color: #166534;
-    border: 1px solid #bbf7d0;
+  background-color: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
 }
 
 .badge-info {
-    background-color: rgba(219, 101, 42, 0.1);
-    color: #db652a;
-    border: 1px solid rgba(219, 101, 42, 0.2);
+  background-color: rgba(219, 101, 42, 0.1);
+  color: var(--dinabox-primary);
+  border: 1px solid rgba(219, 101, 42, 0.2);
 }
 
 .badge-warning {
-    background-color: rgba(15, 23, 42, 0.1);
-    color: #0F172A;
-    border: 1px solid rgba(15, 23, 42, 0.2);
+  background-color: rgba(15, 23, 42, 0.1);
+  color: var(--dinabox-dark);
+  border: 1px solid rgba(15, 23, 42, 0.2);
 }
 
-/* Estilos para tooltips */
+/* ===================================
+   TOOLTIPS
+   =================================== */
 .tooltip {
-    position: relative;
+  position: relative;
 }
 
 .tooltip::before {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #0F172A;
-    color: white;
-    padding: 0.5rem;
-    border-radius: 0.375rem;
-    font-size: 0.875rem;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--dinabox-dark);
+  color: var(--dinabox-white);
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
 }
 
 .tooltip:hover::before {
-    opacity: 1;
+  opacity: 1;
+}
+
+/* ===================================
+   ÍCONES E ELEMENTOS INTERATIVOS
+   =================================== */
+[data-lucide] {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover [data-lucide] {
+  transform: scale(1.1);
+}
+
+.fill-yellow-400 {
+  fill: #facc15;
+  color: #facc15;
+}
+
+/* ===================================
+   RESPONSIVIDADE
+   =================================== */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+
+  .stats-card {
+    margin-bottom: 1rem;
+  }
+
+  .feature-card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ===================================
+   MELHORIAS DE ACESSIBILIDADE
+   =================================== */
+@media (prefers-reduced-motion: reduce) {
+  .card-hover,
+  .btn-primary,
+  .btn-secondary,
+  [data-lucide] {
+    transition: none;
+  }
+
+  .pulse-animation {
+    animation: none;
+  }
+
+  .animate-fade-in-up {
+    animation: none;
+  }
+}
+
+/* ===================================
+   PRINT STYLES
+   =================================== */
+@media print {
+  .btn-primary,
+  .btn-secondary,
+  .pulse-animation {
+    animation: none;
+    box-shadow: none;
+  }
+
+  .hero-gradient {
+    background: var(--dinabox-white);
+  }
 }
