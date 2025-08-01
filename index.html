@@ -25,6 +25,13 @@
         };
     </script>
 
+    <!-- EmailJS CDN -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("jLWYXS3u41RrqDIT3"); // Seu User ID do EmailJS
+        })();
+    </script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
@@ -80,13 +87,13 @@
 
                     <div class="space-y-6">
                         <h1 class="hero-title text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-dinaboxDark leading-tight">
-                            PRODUÇÃO ÁGIL E COM 
+                            Automatize a sua mercenaria.
+                            <br>
                             <span class="text-dinaboxPrimary relative">
-                                PRECISÃO MILIMÉTRICA
+                                Cresça com DinaBox.
                                 <div class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-dinaboxPrimary to-orange-400 rounded-full"></div>
                             </span>
                         </h1>
-                        
                         <div class="space-y-4 text-lg sm:text-xl text-gray-600 leading-relaxed">
                             <p>Software completo para transformar sua marcenaria com <strong>automação inteligente</strong>, otimização de recursos e integração digital completa.</p>
                             <p>Com poucos cliques, você gera <strong>relatórios completos</strong>, planos de corte otimizados, etiquetas com informações e se integra com máquinas CNC.</p>
@@ -104,24 +111,6 @@
                             Ver Demonstração
                         </button>
                     </div>
-
-                    <!-- Stats -->
-                    <div class="grid grid-cols-3 gap-6 pt-8">
-                        <div class="stats-card text-center p-4 rounded-xl">
-                            <div class="text-2xl font-bold text-dinaboxDark">1.200+</div>
-                            <div class="text-sm text-gray-600">Marcenarias</div>
-                        </div>
-                        <div class="stats-card text-center p-4 rounded-xl">
-                            <div class="text-2xl font-bold text-dinaboxDark">9 Anos</div>
-                            <div class="text-sm text-gray-600">Experiência</div>
-                        </div>
-                        <div class="stats-card text-center p-4 rounded-xl">
-                            <div class="text-2xl font-bold text-dinaboxDark">500+</div>
-                            <div class="text-sm text-gray-600">Empresas</div>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="relative">
                     <div class="absolute inset-0 bg-gradient-to-r from-dinaboxPrimary to-dinaboxDark rounded-3xl blur-3xl opacity-20"></div>
                     <img src="https://via.placeholder.com/800x600/db652a/ffffff?text=DinaBox+Dashboard" alt="DinaBox Dashboard" class="relative rounded-2xl shadow-2xl border border-gray-200 w-full" />
@@ -248,73 +237,7 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="sistema" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="text-center space-y-4 mb-16">
-                <div class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-dinaboxPrimary/10 text-dinaboxPrimary border border-dinaboxPrimary/20">
-                    Por que escolher DinaBox?
-                </div>
-                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-dinaboxDark">
-                    Transforme sua marcenaria com tecnologia
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Um software pensado para automatizar tarefas, otimizar recursos e integrar seu processo produtivo com o mundo digital.
-                </p>
-            </div>
-
-            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                <div class="feature-card card-hover p-6 rounded-xl">
-                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 mb-4">
-                        <i data-lucide="check-circle" class="h-6 w-6 text-green-600"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-dinaboxDark mb-2">Planos de Corte Otimizados</h3>
-                    <p class="text-gray-600">Reduza desperdícios com algoritmos inteligentes de otimização</p>
-                </div>
-
-                <div class="feature-card card-hover p-6 rounded-xl">
-                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-yellow-100 mb-4">
-                        <i data-lucide="star" class="h-6 w-6 text-yellow-600"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-dinaboxDark mb-2">Integração CNC</h3>
-                    <p class="text-gray-600">Conecte-se diretamente com máquinas CNC para automação total</p>
-                </div>
-
-                <div class="feature-card card-hover p-6 rounded-xl">
-                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 mb-4">
-                        <i data-lucide="trending-up" class="h-6 w-6 text-blue-600"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-dinaboxDark mb-2">Relatórios Completos</h3>
-                    <p class="text-gray-600">Acompanhe sua produção com relatórios detalhados e precisos</p>
-                </div>
-
-                <div class="feature-card card-hover p-6 rounded-xl">
-                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-100 mb-4">
-                        <i data-lucide="users" class="h-6 w-6 text-purple-600"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-dinaboxDark mb-2">Gestão de Equipe</h3>
-                    <p class="text-gray-600">Organize tarefas e acompanhe o desempenho da sua equipe</p>
-                </div>
-
-                <div class="feature-card card-hover p-6 rounded-xl">
-                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 mb-4">
-                        <i data-lucide="message-circle" class="h-6 w-6 text-dinaboxPrimary"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-dinaboxDark mb-2">Suporte Especializado</h3>
-                    <p class="text-gray-600">Conte com Pablo Ortiz e nossa equipe de especialistas</p>
-                </div>
-
-                <div class="feature-card card-hover p-6 rounded-xl">
-                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100 mb-4">
-                        <i data-lucide="zap" class="h-6 w-6 text-gray-600"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-dinaboxDark mb-2">Fácil Implementação</h3>
-                    <p class="text-gray-600">Sistema intuitivo que você aprende rapidamente</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- About Pablo Section -->
     <section id="vendedor" class="py-20 md:py-32">
         <div class="container mx-auto px-4 md:px-6">
@@ -394,7 +317,7 @@
                         Fale com Pablo Ortiz agora mesmo
                     </h2>
                     <p class="text-xl text-gray-600">
-                        Receba uma consultoria gratuita e descubra como o DinaBox pode transformar sua empresa.
+                        Agende sua apresentaçao comigo e descubra como o DinaBox pode transformar sua empresa.
                     </p>
                 </div>
 
@@ -446,7 +369,6 @@
                                 </div>
                                 <div>
                                     <h3 class="font-semibold text-lg">WhatsApp Direto</h3>
-                                    <p class="text-orange-100">Resposta imediata</p>
                                 </div>
                             </div>
                             <button onclick="openWhatsApp()" class="w-full rounded-lg bg-white/20 hover:bg-white/30 px-5 py-3 text-center font-semibold text-dinaboxWhite transition-colors">
@@ -462,11 +384,10 @@
                                 </div>
                                 <div>
                                     <h3 class="font-semibold text-lg">Email</h3>
-                                    <p class="text-white/70">Resposta em até 24 horas</p>
                                 </div>
                             </div>
                             <button onclick="openEmail()" class="w-full rounded-lg bg-white/20 hover:bg-white/30 px-5 py-3 text-center font-semibold text-dinaboxWhite transition-colors">
-                                contato@dinabox.com.br
+                                pablo.dinabox@gmail.com
                             </button>
                         </div>
 
@@ -480,11 +401,11 @@
                                 <i data-lucide="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
                             </div>
                             <p class="text-gray-600 text-sm mb-3">
-                                "O DinaBox revolucionou nossa marcenaria. Reduzimos 40% do desperdício e aumentamos nossa produtividade significativamente."
+                                "Desde que comecei a usar o DinaBox em outubro de 2023, após quatro anos com outro software, minha experiência melhorou muito. No antigo software, tinha dificuldades de aprendizagem e não conseguia projetar, mas o DinaBox, que é compatível com o SketchUp, facilitou minha transição e aprendizado rápido. Isso nos motivou a investir em uma Router CNC em 2024. Em apenas 40 dias, já vi muitos resultados positivos, principalmente na entrega das peças no plano de corte. Estou muito satisfeito com o desenvolvimento diário e os resultados que o DinaBox proporciona."
                             </p>
                             <div class="text-sm">
-                                <div class="font-semibold text-dinaboxDark">João Silva</div>
-                                <div class="text-gray-500">Marcenaria Silva & Filhos</div>
+                                <div class="font-semibold text-dinaboxDark">Diego Medina</div>
+                                <div class="text-gray-500">Medina Móveis Personalizados</div>
                             </div>
                         </div>
                     </div>

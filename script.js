@@ -221,56 +221,60 @@ Obrigado!`)
 // FORMULÁRIO DE CONTATO
 // ===================================
 function submitForm(event) {
-  event.preventDefault()
+  event.preventDefault();
 
-  const form = event.target
-  const button = form.querySelector('button[type="submit"]')
-  const originalText = button.innerHTML
+  const form = event.target;
+  const button = form.querySelector('button[type="submit"]');
+  const originalText = button.innerHTML;
 
-  // Estado de loading
-  button.innerHTML = '<i data-lucide="loader-2" class="mr-2 h-5 w-5 animate-spin"></i>Enviando...'
-  button.disabled = true
-  button.classList.add("loading")
+  button.innerHTML = '<i data-lucide="loader-2" class="mr-2 h-5 w-5 animate-spin"></i>Enviando...';
+  button.disabled = true;
+  button.classList.add("loading");
 
-  // Coletar dados do formulário
-  const formData = new FormData(form)
+  const inputs = form.querySelectorAll("input");
+  const textarea = form.querySelector("textarea");
+
   const data = {
-    nome: form.querySelector('input[type="text"]').value,
-    whatsapp: form.querySelector('input[type="tel"]').value,
-    email: form.querySelector('input[type="email"]').value,
-    empresa: form.querySelectorAll('input[type="text"]')[1].value,
-    mensagem: form.querySelector("textarea").value,
-  }
+    nome: inputs[0].value.trim(),
+    whatsapp: inputs[1].value.trim(),
+    email: inputs[2].value.trim(),
+    empresa: inputs[3].value.trim(),
+    mensagem: textarea.value.trim(),
+  };
 
-  console.log("📝 Dados do formulário:", data)
+  console.log("📝 Dados do formulário:", data);
 
-  // Simular envio (substituir por integração real)
-  setTimeout(() => {
-    // Restaurar botão
-    button.innerHTML = originalText
-    button.disabled = false
-    button.classList.remove("loading")
+  // Enviar email com EmailJS
+  emailjs.send("service_3rwwhrk", "template_durp3i5", data)
+    .then(() => {
+      button.innerHTML = originalText;
+      button.disabled = false;
+      button.classList.remove("loading");
 
-    // Mostrar sucesso
-    showNotification("Formulário enviado com sucesso! Pablo entrará em contato em breve.", "success")
+      showNotification("Formulário enviado com sucesso! Pablo entrará em contato em breve.", "success");
+      form.reset();
 
-    // Limpar formulário
-    form.reset()
-
-    // Redirecionar para WhatsApp após delay
-    setTimeout(() => {
-      const message = `Olá Pablo! Acabei de preencher o formulário no site. 
+      setTimeout(() => {
+        const message = `Olá Pablo! Acabei de preencher o formulário no site.
 
 Meus dados:
 - Nome: ${data.nome}
 - Empresa: ${data.empresa}
 - WhatsApp: ${data.whatsapp}
 
-Gostaria de saber mais sobre o DinaBox.`
+Gostaria de saber mais sobre o DinaBox.`;
 
-      openWhatsApp(message)
-    }, 1500)
-  }, 2000)
+        openWhatsApp(message);
+      }, 1500);
+    })
+    .catch((error) => {
+      console.error("Erro ao enviar email:", error);
+      showNotification("Erro ao enviar o formulário. Tente novamente mais tarde.", "error");
+
+      button.innerHTML = originalText;
+      button.disabled = false;
+      button.classList.remove("loading");
+    });
 }
 
 // ===================================
